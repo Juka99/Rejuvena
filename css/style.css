@@ -1,0 +1,1163 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+.transition-fade {
+  opacity: 1;
+  -webkit-transition: .9s;
+  transition: .9s;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transform-origin: bottom;
+          transform-origin: bottom;
+}
+
+html.is-animating .transition-fade {
+  opacity: 1;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+html.is-leaving .transition-fade {
+  opacity: 0;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+html {
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html body {
+  width: 100%;
+  max-width: 100%;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  overflow-x: hidden;
+}
+
+html body .mainNavigation {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 3% 0%;
+  position: fixed;
+  top: 0px;
+  z-index: 999;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+html body .mainNavigation .leftSideNav {
+  width: 30%;
+  -webkit-transition: .4s;
+  transition: .4s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+html body .mainNavigation .leftSideNav .logoText {
+  font-family: 'Dancing Script', cursive;
+  text-decoration: none;
+  color: #f18693;
+  font-size: 2.8em;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+html body .mainNavigation .rightSideNav {
+  width: 50%;
+}
+
+html body .mainNavigation .rightSideNav ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .mainNavigation .rightSideNav ul li .mainNavLink {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: whitesmoke;
+  -webkit-transition: .5s;
+  transition: .5s;
+  position: relative;
+  font-weight: bold;
+}
+
+html body .mainNavigation .rightSideNav ul li .mainNavLink:hover > i {
+  color: #f18693 !important;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+html body .mainNavigation .rightSideNav ul li .activeLink {
+  color: #f18693 !important;
+}
+
+html body .mainNavigation .rightSideNav ul .subMenuMainLink {
+  position: relative;
+}
+
+html body .mainNavigation .rightSideNav ul .subMenuMainLink ul {
+  width: 100%;
+  position: absolute;
+  background-color: whitesmoke;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  text-align: center;
+  padding: 3%;
+}
+
+html body .mainNavigation .rightSideNav ul .subMenuMainLink ul li {
+  margin: 20px 0px;
+}
+
+html body .mainNavigation .rightSideNav ul .subMenuMainLink ul li a {
+  color: #141414;
+  text-decoration: none;
+  -webkit-transition: .5s;
+  transition: .5s;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+html body .mainNavigation .rightSideNav ul .subMenuMainLink ul li a:hover {
+  color: #f2909b !important;
+}
+
+html body .sideNavTrigger {
+  position: fixed;
+  display: block;
+  z-index: 1000;
+  width: 50px;
+  height: 15px;
+  top: 5%;
+  left: 2%;
+  display: none;
+}
+
+html body .sideNavTrigger:hover::before {
+  background-color: #c260cf;
+}
+
+html body .sideNavTrigger:hover::after {
+  background-color: #b13ac1;
+}
+
+html body .sideNavTrigger::before {
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 4px;
+  top: 0%;
+  left: 10px;
+  background-color: #9f34ae;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+html body .sideNavTrigger::after {
+  position: absolute;
+  content: '';
+  width: 30px;
+  height: 4px;
+  left: 10px;
+  top: 100%;
+  background-color: #c973d5;
+  -webkit-transition: .6s;
+  transition: .6s;
+}
+
+html body .sideNavTriggerToggle::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+html body .sideNavTriggerToggle::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  top: 5% !important;
+}
+
+html body .sideNavigationFirstBlock {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+html body .sideNavigationFirstBlock ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+html body .sideNavigationFirstBlock ul li {
+  margin: 15px 0px;
+}
+
+html body .sideNavigationFirstBlock ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  letter-spacing: 1.3px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+html body .sideNavigationFirstBlock ul li a:hover {
+  color: #c973d5 !important;
+}
+
+html body .sideNavigationFirstBlock ul li .activeLink {
+  color: #c973d5 !important;
+}
+
+html body .sideNavigationFirstBlock ul .subMenuSideLink {
+  position: relative;
+}
+
+html body .sideNavigationFirstBlock ul .subMenuSideLink .mainSubMenu {
+  position: absolute;
+  background-color: whitesmoke;
+  padding: 2%;
+  margin: 0px auto;
+  width: 100%;
+  display: none;
+}
+
+html body .sideNavigationFirstBlock ul .subMenuSideLink .mainSubMenu li {
+  margin: 20px 0px;
+}
+
+html body .sideNavigationFirstBlockToggle {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+}
+
+html body .sideNavigationSecondBlock {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  background-color: whitesmoke;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+html body .sideNavigationSecondBlockToggle {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
+html body main {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/rejuvenaCover.jpg");
+  background-position: 70%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+html body main .mainHomeFader {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+html body main .mainHomeFader h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 6.5em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ee9ca7), to(#ffdde1));
+  background: linear-gradient(#ee9ca7, #ffdde1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #b13ac1;
+  letter-spacing: 3px;
+  position: relative;
+  padding-bottom: 5%;
+}
+
+html body main .mainHomeFader h1 span {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ee9ca7), to(#ffdde1));
+  background: linear-gradient(#ee9ca7, #ffdde1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  font-size: .5em;
+  width: 100%;
+  right: -20%;
+  bottom: 10%;
+}
+
+html body main .mainHomeFader p {
+  color: whitesmoke;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  padding: 2% 0%;
+  padding-top: 2%;
+}
+
+html body .treatmentSectionHome {
+  width: 80%;
+  margin: 5% auto;
+  text-align: center;
+}
+
+html body .treatmentSectionHome p {
+  padding: 5% 5% 7% 5%;
+  font-size: 1.3em;
+  line-height: 30px;
+}
+
+html body .betweenBlock {
+  width: 100%;
+  height: 160px;
+  background-image: url("../images/betweenBlock.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  margin-top: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .betweenBlock a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  background-color: #f399a4;
+  padding: 1% 5%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+html body .betweenBlock a:hover {
+  background-color: #d8b6a9;
+}
+
+html body .contactSection {
+  width: 80%;
+  margin: 7% auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .contactSection .phoneAndSocials {
+  margin: 3% 0%;
+  text-align: center;
+}
+
+html body .contactSection .phoneAndSocials h4 {
+  font-size: 1.4em;
+  padding: 8% 0%;
+}
+
+html body .contactSection .phoneAndSocials a {
+  color: #ec6273;
+  font-size: 1.1em;
+}
+
+html body .contactSection .phoneAndSocials a i {
+  font-size: 1.8em;
+}
+
+html body .contactSection .phoneAndSocials a span {
+  font-size: 1.1em;
+}
+
+html body .contactSection .phoneAndSocials a p {
+  padding-top: 3%;
+  font-size: 1.1em;
+}
+
+html body .contactSection .contactSeparator {
+  font-weight: bold;
+  font-size: 2em;
+  padding: 3% 0%;
+}
+
+html body .contactSection .formContact {
+  margin-top: 3%;
+  text-align: center;
+  width: 70%;
+}
+
+html body .contactSection .formContact h3 {
+  font-size: 1.7em;
+}
+
+html body .contactSection .formContact .formHolder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 3% auto;
+}
+
+html body .contactSection .formContact .formHolder .contactField {
+  width: 80%;
+  margin: 2% 0%;
+  border: none;
+  border-bottom: 2px solid #ffb5c1;
+  outline: none;
+  padding: 1%;
+  font-size: 1.1em;
+  resize: none;
+  border-radius: 5px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+html body .contactSection .formContact .formHolder .contactField:focus {
+  border-color: #f18693;
+}
+
+html body .contactSection .formContact .formHolder .contactField::-webkit-input-placeholder {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html body .contactSection .formContact .formHolder .contactField:-ms-input-placeholder {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html body .contactSection .formContact .formHolder .contactField::-ms-input-placeholder {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html body .contactSection .formContact .formHolder .contactField::placeholder {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+html body .contactSection .formContact .formHolder button {
+  border: none;
+  outline: none;
+  margin-top: 4%;
+  cursor: pointer;
+  width: 30%;
+}
+
+html body footer {
+  width: 100%;
+  background-color: whitesmoke;
+}
+
+html body footer .topPartFooter {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 4% 0%;
+}
+
+html body footer .topPartFooter .leftTopPartFooter {
+  width: 30%;
+  text-align: center;
+}
+
+html body footer .topPartFooter .leftTopPartFooter a {
+  text-decoration: none;
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  color: #eb596b;
+}
+
+html body footer .topPartFooter .middleTopPartFooter {
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body footer .topPartFooter .middleTopPartFooter p {
+  font-size: 1.5em;
+  padding-bottom: 5%;
+}
+
+html body footer .topPartFooter .middleTopPartFooter ul {
+  list-style-type: none;
+  text-align: center;
+}
+
+html body footer .topPartFooter .middleTopPartFooter ul li {
+  margin: 7px 0px;
+}
+
+html body footer .topPartFooter .middleTopPartFooter ul li a {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: #eb596b;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+html body footer .topPartFooter .middleTopPartFooter ul li a:hover {
+  color: #e279f0;
+}
+
+html body footer .topPartFooter .rightTopPartFooter {
+  width: 30%;
+  text-align: center;
+}
+
+html body footer .topPartFooter .rightTopPartFooter p {
+  color: #eb596b;
+  font-size: 1.2em;
+  padding: 3% 0%;
+}
+
+html body footer .topPartFooter .rightTopPartFooter a {
+  color: #eb596b;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+}
+
+html body footer .topPartFooter .rightTopPartFooter a i {
+  font-size: 1.4em;
+  padding-right: 2%;
+}
+
+html body footer .bottomPartFooter {
+  text-align: center;
+  padding: 1.5% 0%;
+  font-weight: bold;
+  border-top: 2px solid #e1e1e1;
+}
+
+html body .headingGallery {
+  padding: 4% 0%;
+}
+
+html body .gallery {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[8];
+      grid-template-columns: repeat(8, 1fr);
+  -ms-grid-rows: (5vw)[8];
+      grid-template-rows: repeat(8, 5vw);
+  grid-gap: 15px;
+  padding: 0% 1.5%;
+}
+
+html body .gallery__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+html body .gallery__item--1 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+html body .gallery__item--2 {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 5;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+html body .gallery__item--3 {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  grid-column-end: 9;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 6;
+}
+
+html body .gallery__item--4 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 5;
+  -ms-grid-row: 3;
+      grid-row-start: 3;
+  grid-row-end: 6;
+}
+
+html body .gallery__item--5 {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 5;
+  -ms-grid-row: 6;
+      grid-row-start: 6;
+  grid-row-end: 9;
+}
+
+html body .gallery__item--6 {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  grid-column-end: 9;
+  -ms-grid-row: 6;
+      grid-row-start: 6;
+  grid-row-end: 9;
+}
+
+html body .headingPrices {
+  padding: 4% 0%;
+}
+
+html body .pricesSection {
+  width: 90%;
+  margin: 0px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .pricesSection .priceBoxes {
+  width: 45%;
+}
+
+html body .pricesSection .priceBoxes .priceBox {
+  border-bottom: 3px solid #ffb5c1;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5% 0%;
+  padding-bottom: 1.5%;
+}
+
+html body .pricesSection .priceBoxes .priceBox h3 {
+  font-size: 1.4em;
+}
+
+html body .pricesSection .priceBoxes .priceBox p {
+  font-size: 1.1em;
+}
+
+html body .aboutRejuveSection {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: -130px auto 0% auto;
+}
+
+html body .aboutRejuveSection img {
+  width: 70%;
+  margin-bottom: 7%;
+}
+
+html body .aboutRejuveSection p {
+  font-size: 1.4em;
+  text-align: center;
+  line-height: 33px;
+  position: relative;
+}
+
+html body .aboutRejuveSection p::before {
+  position: absolute;
+  content: '';
+  height: 100%;
+  width: 4px;
+  background-color: #ffb5c1;
+  left: -3%;
+}
+
+html body .aboutOwnerRejuvena {
+  width: 90%;
+  margin: 10% auto 10% auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .aboutOwnerRejuvena .leftSideOwnerBlock {
+  width: 50%;
+}
+
+html body .aboutOwnerRejuvena .leftSideOwnerBlock h2 {
+  text-align: left;
+  padding-bottom: 8%;
+  padding-top: 0%;
+}
+
+html body .aboutOwnerRejuvena .leftSideOwnerBlock p {
+  font-size: 1.2em;
+  letter-spacing: 1.2px;
+  line-height: 33px;
+}
+
+html body .aboutOwnerRejuvena .rightSideOwnerBlock {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .aboutOwnerRejuvena .rightSideOwnerBlock img {
+  display: block;
+  width: 80%;
+}
+
+html body .offersCover {
+  width: 100%;
+  height: 60vh;
+  background-color: #ffb5c1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+html body .offersCover h1 {
+  padding-top: 10%;
+  color: whitesmoke;
+  font-size: 3em;
+  text-align: center;
+}
+
+html body .offersList {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5% 0%;
+}
+
+html body .offersList h2 {
+  text-align: center;
+}
+
+html body .offersList .basicTreatmentsHolder {
+  width: 50%;
+  margin: 5% 0%;
+}
+
+html body .offersList .basicTreatmentsHolder img {
+  max-width: 100%;
+}
+
+html body .offersList .printOffers {
+  width: 80%;
+  margin-top: 3%;
+}
+
+html body .offersList .printOffers .offerBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2% 0%;
+  border-bottom: 1px solid #141414;
+  cursor: pointer;
+}
+
+html body .offersList .printOffers .offerBox span {
+  padding-right: 10px;
+}
+
+html body .offersList .printOffers .offerBox h3 {
+  font-weight: lighter;
+  letter-spacing: 1.2px;
+}
+
+html body .offersList .printOffers > .offerBox:nth-of-type(1) {
+  border-top: 1px solid #141414;
+}
+
+html body .offersList .printOffers .offerDesc {
+  font-size: 1.2em;
+  padding: 3%;
+  display: none;
+}
+
+html .overflowBody {
+  overflow-y: visible;
+}
+
+html .navChange {
+  background-color: whitesmoke;
+  padding: 2% 0% !important;
+}
+
+html .navLinkAnimationSecond {
+  color: #f6b4bc !important;
+}
+
+html .navLinkAnimationSecond::before {
+  content: attr(data-item);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: #f2909b;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+html .navLinkAnimationSecond:hover::before {
+  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+html .navLinkAnimationFirst:hover {
+  color: #f18693 !important;
+}
+
+.leftSideNavIndex {
+  -webkit-transform: translateX(0%) !important;
+          transform: translateX(0%) !important;
+}
+
+.afterHeadingRejuvena {
+  font-weight: 300;
+  letter-spacing: 2px;
+  line-height: 43px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.afterHeadingRejuvena .afterSpanRejuvena {
+  font-weight: bold;
+  font-size: 1.4em;
+  position: relative;
+}
+
+.afterHeadingRejuvena .afterSpanRejuvena::before {
+  position: absolute;
+  content: '';
+  width: 30%;
+  height: 2px;
+  background-color: #f6b4bc;
+  bottom: -30%;
+  left: 35%;
+}
+
+.rejuvenaButton {
+  text-decoration: none;
+  color: whitesmoke;
+  background-color: #f399a4;
+  padding: 1.4% 6%;
+  font-weight: bold;
+  -webkit-transition: .4s;
+  transition: .4s;
+  font-size: 1.1em;
+}
+
+.rejuvenaButton:hover {
+  background-color: #f6b4bc;
+}
+
+.spinner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  background-color: #e58bf5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .4s;
+  transition: .4s;
+  opacity: 1;
+}
+
+.spinnerHide {
+  opacity: 0;
+  z-index: -1000;
+}
+
+.main-wand {
+  position: absolute;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  /* Light grey */
+  border-top: 8px solid #ba4cc9;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+  position: absolute;
+}
+
+.stars1 {
+  fill: #f3fa6b;
+  -webkit-animation: flicker 1s linear infinite;
+          animation: flicker 1s linear infinite;
+}
+
+.stars2 {
+  fill: #f3fa6b;
+  -webkit-animation: flicker 2s linear infinite;
+          animation: flicker 2s linear infinite;
+}
+
+.stars3 {
+  fill: #f3fa6b;
+  -webkit-animation: flicker 3s linear infinite;
+          animation: flicker 3s linear infinite;
+}
+
+.stars4 {
+  fill: #f3fa6b;
+  -webkit-animation: flicker 4s linear infinite;
+          animation: flicker 4s linear infinite;
+}
+
+.wandfill {
+  fill: #ba4cc9;
+}
+
+.wand {
+  fill: #ba4cc9;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: whitesmoke;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ef7d8b;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ec6273;
+}
+
+::-moz-selection {
+  background-color: #f18693;
+  color: whitesmoke;
+}
+
+::selection {
+  background-color: #f18693;
+  color: whitesmoke;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes flicker {
+  0%, 30%, 22%, 62, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+  }
+  20%, 22%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.50;
+  }
+}
+
+@keyframes flicker {
+  0%, 30%, 22%, 62, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+  }
+  20%, 22%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.50;
+  }
+}
+/*# sourceMappingURL=style.css.map */
