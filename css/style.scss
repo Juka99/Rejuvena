@@ -14,6 +14,65 @@ $co : column;
 $sb : space-between;
 $fw : wrap;
 
+$d0: 1390px;
+$d1 : 1200px;
+$d2: 992px;
+$d3: 768px;
+$d4: 576px;
+$d5: 480px;
+$d6: 386px;
+
+// Mixini za resposnive
+
+@mixin d0 {
+    @media (max-width: #{$d0}){
+        @content;
+    }
+}
+
+@mixin d1 {
+    @media (max-width: #{$d1}){
+        @content;
+    }
+}
+
+@mixin d1 {
+    @media (max-width: #{$d1}){
+        @content;
+    }
+}
+
+
+@mixin d2 {
+    @media (max-width: #{$d2}){
+        @content;
+    }
+}
+
+@mixin d3 {
+    @media (max-width: #{$d3}){
+        @content;
+    }
+}
+
+@mixin d4 {
+    @media (max-width: #{$d4}){
+        @content;
+    }
+}
+
+@mixin d5 {
+    @media (max-width: #{$d5}){
+        @content;
+    }
+}
+
+@mixin d6 {
+    @media (max-width: #{$d6}){
+        @content;
+    }
+}
+
 // Mixini
 
 @mixin logoFont {
@@ -63,6 +122,7 @@ html {
     width : 100%;
     max-width: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
 
 
     body {
@@ -70,7 +130,6 @@ html {
         width : 100%;
         max-width: 100%;
         @include regularFont();
-        //overflow-y: hidden;
         overflow-x: hidden;
 
         // Glavna navigacija
@@ -86,6 +145,12 @@ html {
             top : 0px;
             z-index: 999;
             transition: .4s;
+
+            @include d2 {
+
+                display: none;
+
+            }
 
             .leftSideNav {
 
@@ -109,6 +174,12 @@ html {
             .rightSideNav {
 
                 width : 50%;
+
+                @include d1 {
+
+                    width : 60%;
+
+                }
                 
                 ul {
 
@@ -207,6 +278,12 @@ html {
             left : 2%;
             display: none;
 
+            @include d2 {
+
+                display: block;
+
+            }
+
             &:hover::before{
 
                 background-color: lighten(#ba4cc9, 5%);
@@ -278,6 +355,12 @@ html {
             align-items: $c;
             transition: .5s;
             transform: translateY(-100%);
+
+            @include d4 {
+
+                width : 70%;
+
+            }
             
 
             ul {
@@ -296,6 +379,7 @@ html {
                         font-size: 1.5em;
                         letter-spacing: 1.3px;
                         transition: all 0.4s;
+                        color: #551A8B;
 
                         &:hover {
 
@@ -358,6 +442,12 @@ html {
             transition: .5s;
             transform: translateX(-100%);
 
+            @include d4 {
+
+                width : 30%;
+
+            }
+
         }
 
         .sideNavigationSecondBlockToggle {
@@ -403,6 +493,18 @@ html {
                     position: relative;
                     padding-bottom: 5%;
 
+                    @include d3 {
+
+                        font-size: 5.5em;
+
+                    }
+
+                    @include d5 {
+
+                        font-size: 4.7em;
+
+                    }
+
                     span {
 
                         background: linear-gradient(#ee9ca7, #ffdde1);
@@ -414,6 +516,30 @@ html {
                         right : -20%;
                         bottom : 10%;
 
+                        @include d2 {
+
+                            bottom : 3%;
+
+                        }
+
+                        @include d3 {
+
+                            bottom : 0%;
+
+                        }
+
+                        @include d4 {
+
+                            bottom : -5%;
+
+                        }
+
+                        @include d5 {
+
+                            bottom : -8%;
+
+                        }
+
                     }
                     
                 }
@@ -424,7 +550,18 @@ html {
                     font-size: 1.5em;
                     letter-spacing: 2px;
                     padding : 2% 0%;
-                    padding-top: 2%;
+
+                    @include d3 {
+
+                        padding : 5% 0%;
+
+                    }
+
+                    @include d6 {
+
+                        padding : 8% 0%;
+
+                    }
 
                 }
 
@@ -439,12 +576,31 @@ html {
             width : 80%;
             margin : 5% auto;
             text-align: $c;
+
+            @include d4 {
+
+                margin : 8% auto 15% auto;
+                width : 90%;
+
+            }
             
             p {
 
                 padding : 5% 5% 7% 5%;
                 font-size: 1.3em;
                 line-height: 30px;
+
+                @include d4 {
+
+                    padding : 10% 0%;
+
+                }
+
+                @include d5 {
+
+                    padding-bottom : 15%;
+
+                }
 
             }
 
@@ -477,9 +633,76 @@ html {
                 padding : 1% 5%;
                 transition: .4s;
 
+                @include d3 {
+
+                    padding : 2% 7%;
+
+                }
+
+                @include d5 {
+
+                    padding : 4% 7%;
+
+                }
+
+                @include d6 {
+
+                    padding : 4% 3%;
+
+                }
+
                 &:hover {
 
                     background-color: darken(#f0e3de, 15%);
+
+                }
+
+            }
+
+        }
+
+        // beforeAndAfter sekcija
+
+        .beforeAndAfterRejuvenaMain {
+
+            padding-top: 5%;
+
+            .beforeAndAfterBoxes {
+
+                display: $f;
+                justify-content: $sa;
+                align-items: $c;
+                margin-top: 5%;
+
+                @include d4 {
+
+                    flex-direction: $co;
+                    margin-top: 8%;
+
+                }
+
+                .beforeAndAfterBox {
+
+                    width : 40%;
+
+                    @include d4 {
+
+                        margin : 2% 0%;
+                        width : 60%;
+
+                    }
+
+                    @include d5 {
+
+                        width : 70%;
+
+                    }
+
+                    img {
+
+                        width : 100%;
+
+                    }
 
                 }
 
@@ -546,6 +769,13 @@ html {
                 font-size: 2em;
                 padding : 3% 0%;
 
+                @include d4 {
+
+                    font-size: 1.6em;
+                    padding : 6% 0%;
+
+                }
+
             }
 
 
@@ -554,6 +784,12 @@ html {
                 margin-top: 3%;
                 text-align: $c;
                 width : 70%;
+
+                @include d2 {
+
+                    width : 100%;
+
+                }
 
                 h3 {
 
@@ -570,6 +806,12 @@ html {
                     align-items: $c;
                     margin : 3% auto;
 
+                    @include d5 {
+
+                        margin : 10% auto;
+
+                    }
+
                     .contactField {
 
                         width : 80%;
@@ -578,10 +820,22 @@ html {
                         border-bottom: 2px solid #ffb5c1;
                         outline: none;
                         padding : 1%;
-                        font-size: 1.1em;
+                        font-size: 1.2em;
                         resize: none;
                         border-radius: 5px;
                         transition: .4s;
+
+                        @include d2 {
+
+                            margin: 3% 0%;
+        
+                        }
+                        @include d5 {
+
+                            margin: 5% 0%;
+                            width : 90%;
+    
+                        }
 
                         &:focus {
 
@@ -605,6 +859,12 @@ html {
                         margin-top : 4%;
                         cursor: pointer;
                         width : 30%;
+
+                        @include d3 {
+
+                            width : 50%;
+
+                        }
 
                     }
 
@@ -630,10 +890,22 @@ html {
                 align-items: $c;
                 padding : 4% 0%;
 
+                @include d3 {
+
+                    flex-direction: $co;
+
+                }
+
                 .leftTopPartFooter {
 
                     width : 30%;
                     text-align: $c;
+
+                    @include d3 {
+
+                        display: none;
+    
+                    }
                     
                     a {
 
@@ -654,6 +926,12 @@ html {
                     flex-direction: $co;
                     justify-content: $c;
                     align-items: $c;
+
+                    @include d3 {
+
+                        order : 1;
+    
+                    }
 
                     p {
 
@@ -697,11 +975,31 @@ html {
                     width : 30%;
                     text-align: $c;
 
+                    @include d3 {
+
+                        order : 2;
+                        width : 100%;
+                        margin-top: 5%;
+    
+                    }
+
                     p {
 
                         color : darken(#f6b4bc, 20%);
                         font-size: 1.2em;
                         padding : 3% 0%;
+
+                        @include d2 {
+
+                            padding : 5% 0;
+
+                        }
+
+                        @include d3 {
+
+                            padding : 1% 0;
+
+                        }
 
                     }
 
@@ -712,6 +1010,12 @@ html {
                         align-items: $c;
                         justify-content: $c;
                         text-decoration: none;
+
+                        @include d2 {
+
+                            font-size: 1.2em;
+
+                        }
 
                         i {
 
@@ -744,6 +1048,12 @@ html {
 
             padding : 4% 0%;
 
+            @include d4 {
+
+                padding : 7% 0%;
+
+            }
+
         }
 
         .gallery {
@@ -753,6 +1063,12 @@ html {
             grid-template-rows: repeat(8, 5vw);
             grid-gap: 15px;
             padding : 0% 1.5%;
+
+            @include d4 {
+
+                margin : 2% 0%;
+
+            }
 
             &__img {
 
@@ -769,6 +1085,13 @@ html {
                 grid-row-start: 1;
                 grid-row-end: 3;
 
+                @include d4 {
+
+                    grid-column-start: 1;
+                    grid-column-end: 4;
+
+                }
+
             }
 
             &__item--2 {
@@ -778,6 +1101,13 @@ html {
                 grid-row-start: 1;
                 grid-row-end: 3;
 
+                @include d4 {
+
+                    grid-column-start: 4;
+                    grid-column-end: 9;
+
+                }
+
             }
 
             &__item--3 {
@@ -786,6 +1116,13 @@ html {
                 grid-column-end: 9;
                 grid-row-start: 1;
                 grid-row-end: 6;
+
+                @include d4 {
+
+                    grid-row-start: 3;
+                    grid-row-end: 5;
+
+                }
 
             }
 
@@ -812,7 +1149,14 @@ html {
                 grid-column-start: 5;
                 grid-column-end: 9;
                 grid-row-start: 6;
-                grid-row-end: 9
+                grid-row-end: 9;
+
+                @include d4 {
+
+                    grid-row-start: 5;
+                    grid-row-end: 9;
+
+                }
 
             }
 
@@ -835,9 +1179,21 @@ html {
             justify-content: $sb;
             align-items: $c;
 
+            @include d2 {
+
+                flex-direction: $co;
+
+            }
+
             .priceBoxes {
 
                 width : 45%;
+
+                @include d2 {
+
+                    width : 100%;
+    
+                }
 
                 .priceBox {
 
@@ -853,13 +1209,62 @@ html {
 
                         font-size: 1.4em;
 
+                        @include d2 {
+
+                            width : 60%;
+
+                        }
+
                     }
 
                     p {
 
-                        font-size: 1.1em;
+                        font-size: 1.2em;
+
+                        @include d2 {
+
+                            width : 20%;
+
+                        }
 
                     }
+
+                }
+
+            }
+
+        }
+
+        .priceBoxSpecial {
+
+            width: 90%;
+            border-bottom: 3px solid #ffb5c1;
+            border-radius: 2px;
+            display: $f;
+            justify-content: $sb;
+            align-items: $c;
+            margin : 2% auto 5% auto;
+            padding-bottom: 1.5%;
+
+            h3 {
+
+                font-size: 1.4em;
+
+                @include d2 {
+
+                    width : 70%;
+
+                }
+
+            }
+
+            p {
+
+                font-size: 1.2em;
+
+                @include d2 {
+
+                    width : 20%;
 
                 }
 
@@ -879,10 +1284,29 @@ html {
             flex-direction: $co;
             margin : -130px auto 0% auto;
 
+            @include d5 {
+
+                margin : -60px auto 0% auto;
+
+            }
+
             img {
 
                 width : 70%;
                 margin-bottom: 7%;
+
+                @include d5 {
+
+                    margin-bottom: 15%;
+                    width : 80%;
+
+                }
+
+                @include d6 {
+
+                    width : 100%;
+
+                }
 
             }
 
@@ -912,20 +1336,44 @@ html {
         .aboutOwnerRejuvena {
 
             width : 90%;
-            margin : 10% auto 10% auto;
+            margin : 10% auto;
             display: $f;
             justify-content: $sa;
             align-items: $c;
 
+            @include d3 {
+
+                flex-direction: $co;
+
+            }
+
+            @include d6 {
+
+                margin: 15% auto;
+
+            }
+
             .leftSideOwnerBlock {
 
                 width : 50%;
+
+                @include d3 {
+
+                    width : 90%;
+
+                }
 
                 h2 {
 
                     text-align: left;
                     padding-bottom: 8%;
                     padding-top: 0%;
+
+                    @include d3 {
+
+                        text-align: $c;
+
+                    }
 
                 }
 
@@ -945,6 +1393,19 @@ html {
                 display: $f;
                 justify-content: $c;
                 align-items: $c;
+
+                @include d3 {
+
+                    width : 70%;
+                    margin-top: 8%;
+
+                }
+
+                @include d6 {
+
+                    width : 90%;
+
+                }
 
                 img {
 
@@ -974,12 +1435,24 @@ html {
             justify-content: $c;
             align-items: $c;
 
+            @include d5 {
+
+                height : 40vh;
+
+            }
+
             h1 {
 
                 padding-top: 10%;
                 color : whitesmoke;
                 font-size: 3em;
                 text-align: center;
+
+                @include d5 {
+
+                    font-size: 2.4em;
+    
+                }
 
             }
 
@@ -1006,6 +1479,18 @@ html {
                 width : 50%;
                 margin: 5% 0%;
 
+                @include d3 {
+
+                    width : 70%;
+
+                }
+
+                @include d4 {
+
+                    margin : 10% 0%;
+
+                }
+
                 img {
 
                     max-width: 100%;
@@ -1025,6 +1510,12 @@ html {
                     padding : 2% 0%;
                     border-bottom: 1px solid #141414;
                     cursor: pointer;
+
+                    @include d3 {
+
+                        padding : 4% 0%;
+
+                    }
 
                     span {
 
@@ -1049,9 +1540,41 @@ html {
 
                 .offerDesc {
 
-                    font-size: 1.2em;
+                    font-size: 1.3em;
                     padding : 3%;
                     display: none;
+                    letter-spacing: 1.1px;
+                    line-height: 1.4em;
+
+                    @include d4 {
+
+                        padding : 5% 3%;
+
+                    }
+
+                    ul {
+
+                        padding-left: 5%;
+
+                    }
+
+                    .priceOfferBox {
+
+                        color : darken(#ee9ca7, 10%);
+
+                    }
+
+                    .moreAboutOffer {
+
+                        color : darken(#ee9ca7, 3%);
+
+                    }
+
+                    .offerParHeading {
+
+                        color : #ee9ca7;
+
+                    }
 
                 }
 
@@ -1129,11 +1652,43 @@ html {
     text-align: $c;
     font-size: 1.5em;
 
+    @include d4 {
+
+        font-size: 1.3em;
+        line-height: 30px;
+
+    }
+
+    @include d5 {
+
+        line-height: 35px;
+
+    }
+
+    @include d6 {
+
+        font-size: 1.2em;
+
+    }
+
+
     .afterSpanRejuvena {
 
         font-weight: bold;
         font-size: 1.4em;
         position: relative;
+
+        @include d5 {
+
+            font-size: 1.1em;
+    
+        }
+
+        @include d6 {
+
+            font-size: 1em;
+    
+        }
 
         &::before {
 
@@ -1143,7 +1698,13 @@ html {
             height: 2px;
             background-color:#f6b4bc;
             bottom : -30%;
-            left : 35%
+            left : 35%;
+
+            @include d5 {
+
+                bottom : -50%;
+
+            }
 
         }
 
@@ -1162,9 +1723,21 @@ html {
     transition: .4s;
     font-size: 1.1em;
 
+    @include d2 {
+
+        padding : 2.5% 6%;
+
+    }
+
+    @include d5 {
+
+        padding : 4% 9%;
+
+    }
+
     &:hover {
 
-        background-color: darken(#f6b4bc, 0%);
+        background-color:#f6b4bc;
 
     }
 
@@ -1179,33 +1752,31 @@ html {
     left : 0;
     right : 0;
     bottom : 0;
-    z-index: 1000;
-    background-color: rgb(229, 139, 245);
+    z-index: 1100;
+    background-color: darken(#f6b4bc, 4%);
     display: $f;
     justify-content: $c;
     align-items: $c;
-    transition: .4s;
+    transition: .7s;
     opacity: 1;
   }
 
-  .spinnerHide {
-
-    opacity: 0;
-    z-index: -1000;
-
-  }
-
   .main-wand {
+
     position: absolute;
+
   }
+  
   .spinner {
+
       border: 8px solid #f3f3f3; /* Light grey */
-      border-top: 8px solid #ba4cc9; /* Blue */
+      border-top: 8px solid darken(#f18693, 2%); /* Blue */
       border-radius: 50%;
       width: 120px;
       height: 120px;
       animation: spin 2s linear infinite;
       position: absolute;
+
   }
   
   .stars1 {
@@ -1229,11 +1800,11 @@ html {
         }
   
   .wandfill {
-          fill: #ba4cc9;
+          fill: darken(#f18693, 2%);
         }
   
   .wand {
-          fill: #ba4cc9;
+          fill: darken(#f18693, 2%);
         }    
 
 
@@ -1289,3 +1860,4 @@ html {
       20%, 22%, 63%, 63.999%, 65%, 69.999% { opacity: 0.50; }
 
   }
+

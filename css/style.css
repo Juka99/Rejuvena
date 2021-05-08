@@ -30,6 +30,7 @@ html {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 html body {
@@ -57,6 +58,12 @@ html body .mainNavigation {
   transition: .4s;
 }
 
+@media (max-width: 992px) {
+  html body .mainNavigation {
+    display: none;
+  }
+}
+
 html body .mainNavigation .leftSideNav {
   width: 30%;
   -webkit-transition: .4s;
@@ -76,6 +83,12 @@ html body .mainNavigation .leftSideNav .logoText {
 
 html body .mainNavigation .rightSideNav {
   width: 50%;
+}
+
+@media (max-width: 1200px) {
+  html body .mainNavigation .rightSideNav {
+    width: 60%;
+  }
 }
 
 html body .mainNavigation .rightSideNav ul {
@@ -165,6 +178,12 @@ html body .sideNavTrigger {
   display: none;
 }
 
+@media (max-width: 992px) {
+  html body .sideNavTrigger {
+    display: block;
+  }
+}
+
 html body .sideNavTrigger:hover::before {
   background-color: #c260cf;
 }
@@ -231,6 +250,12 @@ html body .sideNavigationFirstBlock {
           transform: translateY(-100%);
 }
 
+@media (max-width: 576px) {
+  html body .sideNavigationFirstBlock {
+    width: 70%;
+  }
+}
+
 html body .sideNavigationFirstBlock ul {
   list-style-type: none;
   text-align: center;
@@ -247,6 +272,7 @@ html body .sideNavigationFirstBlock ul li a {
   letter-spacing: 1.3px;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  color: #551A8B;
 }
 
 html body .sideNavigationFirstBlock ul li a:hover {
@@ -291,6 +317,12 @@ html body .sideNavigationSecondBlock {
   transition: .5s;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+}
+
+@media (max-width: 576px) {
+  html body .sideNavigationSecondBlock {
+    width: 30%;
+  }
 }
 
 html body .sideNavigationSecondBlockToggle {
@@ -341,6 +373,18 @@ html body main .mainHomeFader h1 {
   padding-bottom: 5%;
 }
 
+@media (max-width: 768px) {
+  html body main .mainHomeFader h1 {
+    font-size: 5.5em;
+  }
+}
+
+@media (max-width: 480px) {
+  html body main .mainHomeFader h1 {
+    font-size: 4.7em;
+  }
+}
+
 html body main .mainHomeFader h1 span {
   background: -webkit-gradient(linear, left top, left bottom, from(#ee9ca7), to(#ffdde1));
   background: linear-gradient(#ee9ca7, #ffdde1);
@@ -353,12 +397,47 @@ html body main .mainHomeFader h1 span {
   bottom: 10%;
 }
 
+@media (max-width: 992px) {
+  html body main .mainHomeFader h1 span {
+    bottom: 3%;
+  }
+}
+
+@media (max-width: 768px) {
+  html body main .mainHomeFader h1 span {
+    bottom: 0%;
+  }
+}
+
+@media (max-width: 576px) {
+  html body main .mainHomeFader h1 span {
+    bottom: -5%;
+  }
+}
+
+@media (max-width: 480px) {
+  html body main .mainHomeFader h1 span {
+    bottom: -8%;
+  }
+}
+
 html body main .mainHomeFader p {
   color: whitesmoke;
   font-size: 1.5em;
   letter-spacing: 2px;
   padding: 2% 0%;
-  padding-top: 2%;
+}
+
+@media (max-width: 768px) {
+  html body main .mainHomeFader p {
+    padding: 5% 0%;
+  }
+}
+
+@media (max-width: 386px) {
+  html body main .mainHomeFader p {
+    padding: 8% 0%;
+  }
 }
 
 html body .treatmentSectionHome {
@@ -367,10 +446,29 @@ html body .treatmentSectionHome {
   text-align: center;
 }
 
+@media (max-width: 576px) {
+  html body .treatmentSectionHome {
+    margin: 8% auto 15% auto;
+    width: 90%;
+  }
+}
+
 html body .treatmentSectionHome p {
   padding: 5% 5% 7% 5%;
   font-size: 1.3em;
   line-height: 30px;
+}
+
+@media (max-width: 576px) {
+  html body .treatmentSectionHome p {
+    padding: 10% 0%;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .treatmentSectionHome p {
+    padding-bottom: 15%;
+  }
 }
 
 html body .betweenBlock {
@@ -405,8 +503,73 @@ html body .betweenBlock a {
   transition: .4s;
 }
 
+@media (max-width: 768px) {
+  html body .betweenBlock a {
+    padding: 2% 7%;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .betweenBlock a {
+    padding: 4% 7%;
+  }
+}
+
+@media (max-width: 386px) {
+  html body .betweenBlock a {
+    padding: 4% 3%;
+  }
+}
+
 html body .betweenBlock a:hover {
   background-color: #d8b6a9;
+}
+
+html body .beforeAndAfterRejuvenaMain {
+  padding-top: 5%;
+}
+
+html body .beforeAndAfterRejuvenaMain .beforeAndAfterBoxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5%;
+}
+
+@media (max-width: 576px) {
+  html body .beforeAndAfterRejuvenaMain .beforeAndAfterBoxes {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 8%;
+  }
+}
+
+html body .beforeAndAfterRejuvenaMain .beforeAndAfterBoxes .beforeAndAfterBox {
+  width: 40%;
+}
+
+@media (max-width: 576px) {
+  html body .beforeAndAfterRejuvenaMain .beforeAndAfterBoxes .beforeAndAfterBox {
+    margin: 2% 0%;
+    width: 60%;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .beforeAndAfterRejuvenaMain .beforeAndAfterBoxes .beforeAndAfterBox {
+    width: 70%;
+  }
+}
+
+html body .beforeAndAfterRejuvenaMain .beforeAndAfterBoxes .beforeAndAfterBox img {
+  width: 100%;
 }
 
 html body .contactSection {
@@ -461,10 +624,23 @@ html body .contactSection .contactSeparator {
   padding: 3% 0%;
 }
 
+@media (max-width: 576px) {
+  html body .contactSection .contactSeparator {
+    font-size: 1.6em;
+    padding: 6% 0%;
+  }
+}
+
 html body .contactSection .formContact {
   margin-top: 3%;
   text-align: center;
   width: 70%;
+}
+
+@media (max-width: 992px) {
+  html body .contactSection .formContact {
+    width: 100%;
+  }
 }
 
 html body .contactSection .formContact h3 {
@@ -488,6 +664,12 @@ html body .contactSection .formContact .formHolder {
   margin: 3% auto;
 }
 
+@media (max-width: 480px) {
+  html body .contactSection .formContact .formHolder {
+    margin: 10% auto;
+  }
+}
+
 html body .contactSection .formContact .formHolder .contactField {
   width: 80%;
   margin: 2% 0%;
@@ -495,11 +677,24 @@ html body .contactSection .formContact .formHolder .contactField {
   border-bottom: 2px solid #ffb5c1;
   outline: none;
   padding: 1%;
-  font-size: 1.1em;
+  font-size: 1.2em;
   resize: none;
   border-radius: 5px;
   -webkit-transition: .4s;
   transition: .4s;
+}
+
+@media (max-width: 992px) {
+  html body .contactSection .formContact .formHolder .contactField {
+    margin: 3% 0%;
+  }
+}
+
+@media (max-width: 480px) {
+  html body .contactSection .formContact .formHolder .contactField {
+    margin: 5% 0%;
+    width: 90%;
+  }
 }
 
 html body .contactSection .formContact .formHolder .contactField:focus {
@@ -530,6 +725,12 @@ html body .contactSection .formContact .formHolder button {
   width: 30%;
 }
 
+@media (max-width: 768px) {
+  html body .contactSection .formContact .formHolder button {
+    width: 50%;
+  }
+}
+
 html body footer {
   width: 100%;
   background-color: whitesmoke;
@@ -548,9 +749,24 @@ html body footer .topPartFooter {
   padding: 4% 0%;
 }
 
+@media (max-width: 768px) {
+  html body footer .topPartFooter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 html body footer .topPartFooter .leftTopPartFooter {
   width: 30%;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  html body footer .topPartFooter .leftTopPartFooter {
+    display: none;
+  }
 }
 
 html body footer .topPartFooter .leftTopPartFooter a {
@@ -575,6 +791,14 @@ html body footer .topPartFooter .middleTopPartFooter {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 768px) {
+  html body footer .topPartFooter .middleTopPartFooter {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
 }
 
 html body footer .topPartFooter .middleTopPartFooter p {
@@ -608,10 +832,32 @@ html body footer .topPartFooter .rightTopPartFooter {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  html body footer .topPartFooter .rightTopPartFooter {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    width: 100%;
+    margin-top: 5%;
+  }
+}
+
 html body footer .topPartFooter .rightTopPartFooter p {
   color: #eb596b;
   font-size: 1.2em;
   padding: 3% 0%;
+}
+
+@media (max-width: 992px) {
+  html body footer .topPartFooter .rightTopPartFooter p {
+    padding: 5% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  html body footer .topPartFooter .rightTopPartFooter p {
+    padding: 1% 0;
+  }
 }
 
 html body footer .topPartFooter .rightTopPartFooter a {
@@ -626,6 +872,12 @@ html body footer .topPartFooter .rightTopPartFooter a {
       -ms-flex-pack: center;
           justify-content: center;
   text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  html body footer .topPartFooter .rightTopPartFooter a {
+    font-size: 1.2em;
+  }
 }
 
 html body footer .topPartFooter .rightTopPartFooter a i {
@@ -644,6 +896,12 @@ html body .headingGallery {
   padding: 4% 0%;
 }
 
+@media (max-width: 576px) {
+  html body .headingGallery {
+    padding: 7% 0%;
+  }
+}
+
 html body .gallery {
   display: -ms-grid;
   display: grid;
@@ -653,6 +911,12 @@ html body .gallery {
       grid-template-rows: repeat(8, 5vw);
   grid-gap: 15px;
   padding: 0% 1.5%;
+}
+
+@media (max-width: 576px) {
+  html body .gallery {
+    margin: 2% 0%;
+  }
 }
 
 html body .gallery__img {
@@ -671,6 +935,14 @@ html body .gallery__item--1 {
   grid-row-end: 3;
 }
 
+@media (max-width: 576px) {
+  html body .gallery__item--1 {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+
 html body .gallery__item--2 {
   -ms-grid-column: 3;
       grid-column-start: 3;
@@ -680,6 +952,14 @@ html body .gallery__item--2 {
   grid-row-end: 3;
 }
 
+@media (max-width: 576px) {
+  html body .gallery__item--2 {
+    -ms-grid-column: 4;
+        grid-column-start: 4;
+    grid-column-end: 9;
+  }
+}
+
 html body .gallery__item--3 {
   -ms-grid-column: 5;
       grid-column-start: 5;
@@ -687,6 +967,14 @@ html body .gallery__item--3 {
   -ms-grid-row: 1;
       grid-row-start: 1;
   grid-row-end: 6;
+}
+
+@media (max-width: 576px) {
+  html body .gallery__item--3 {
+    -ms-grid-row: 3;
+        grid-row-start: 3;
+    grid-row-end: 5;
+  }
 }
 
 html body .gallery__item--4 {
@@ -716,6 +1004,14 @@ html body .gallery__item--6 {
   grid-row-end: 9;
 }
 
+@media (max-width: 576px) {
+  html body .gallery__item--6 {
+    -ms-grid-row: 5;
+        grid-row-start: 5;
+    grid-row-end: 9;
+  }
+}
+
 html body .headingPrices {
   padding: 4% 0%;
 }
@@ -734,8 +1030,23 @@ html body .pricesSection {
           align-items: center;
 }
 
+@media (max-width: 992px) {
+  html body .pricesSection {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
 html body .pricesSection .priceBoxes {
   width: 45%;
+}
+
+@media (max-width: 992px) {
+  html body .pricesSection .priceBoxes {
+    width: 100%;
+  }
 }
 
 html body .pricesSection .priceBoxes .priceBox {
@@ -758,8 +1069,57 @@ html body .pricesSection .priceBoxes .priceBox h3 {
   font-size: 1.4em;
 }
 
+@media (max-width: 992px) {
+  html body .pricesSection .priceBoxes .priceBox h3 {
+    width: 60%;
+  }
+}
+
 html body .pricesSection .priceBoxes .priceBox p {
-  font-size: 1.1em;
+  font-size: 1.2em;
+}
+
+@media (max-width: 992px) {
+  html body .pricesSection .priceBoxes .priceBox p {
+    width: 20%;
+  }
+}
+
+html body .priceBoxSpecial {
+  width: 90%;
+  border-bottom: 3px solid #ffb5c1;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 2% auto 5% auto;
+  padding-bottom: 1.5%;
+}
+
+html body .priceBoxSpecial h3 {
+  font-size: 1.4em;
+}
+
+@media (max-width: 992px) {
+  html body .priceBoxSpecial h3 {
+    width: 70%;
+  }
+}
+
+html body .priceBoxSpecial p {
+  font-size: 1.2em;
+}
+
+@media (max-width: 992px) {
+  html body .priceBoxSpecial p {
+    width: 20%;
+  }
 }
 
 html body .aboutRejuveSection {
@@ -780,9 +1140,28 @@ html body .aboutRejuveSection {
   margin: -130px auto 0% auto;
 }
 
+@media (max-width: 480px) {
+  html body .aboutRejuveSection {
+    margin: -60px auto 0% auto;
+  }
+}
+
 html body .aboutRejuveSection img {
   width: 70%;
   margin-bottom: 7%;
+}
+
+@media (max-width: 480px) {
+  html body .aboutRejuveSection img {
+    margin-bottom: 15%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 386px) {
+  html body .aboutRejuveSection img {
+    width: 100%;
+  }
 }
 
 html body .aboutRejuveSection p {
@@ -803,7 +1182,7 @@ html body .aboutRejuveSection p::before {
 
 html body .aboutOwnerRejuvena {
   width: 90%;
-  margin: 10% auto 10% auto;
+  margin: 10% auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -814,14 +1193,41 @@ html body .aboutOwnerRejuvena {
           align-items: center;
 }
 
+@media (max-width: 768px) {
+  html body .aboutOwnerRejuvena {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media (max-width: 386px) {
+  html body .aboutOwnerRejuvena {
+    margin: 15% auto;
+  }
+}
+
 html body .aboutOwnerRejuvena .leftSideOwnerBlock {
   width: 50%;
+}
+
+@media (max-width: 768px) {
+  html body .aboutOwnerRejuvena .leftSideOwnerBlock {
+    width: 90%;
+  }
 }
 
 html body .aboutOwnerRejuvena .leftSideOwnerBlock h2 {
   text-align: left;
   padding-bottom: 8%;
   padding-top: 0%;
+}
+
+@media (max-width: 768px) {
+  html body .aboutOwnerRejuvena .leftSideOwnerBlock h2 {
+    text-align: center;
+  }
 }
 
 html body .aboutOwnerRejuvena .leftSideOwnerBlock p {
@@ -841,6 +1247,19 @@ html body .aboutOwnerRejuvena .rightSideOwnerBlock {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 768px) {
+  html body .aboutOwnerRejuvena .rightSideOwnerBlock {
+    width: 70%;
+    margin-top: 8%;
+  }
+}
+
+@media (max-width: 386px) {
+  html body .aboutOwnerRejuvena .rightSideOwnerBlock {
+    width: 90%;
+  }
 }
 
 html body .aboutOwnerRejuvena .rightSideOwnerBlock img {
@@ -863,11 +1282,23 @@ html body .offersCover {
           align-items: center;
 }
 
+@media (max-width: 480px) {
+  html body .offersCover {
+    height: 40vh;
+  }
+}
+
 html body .offersCover h1 {
   padding-top: 10%;
   color: whitesmoke;
   font-size: 3em;
   text-align: center;
+}
+
+@media (max-width: 480px) {
+  html body .offersCover h1 {
+    font-size: 2.4em;
+  }
 }
 
 html body .offersList {
@@ -897,6 +1328,18 @@ html body .offersList .basicTreatmentsHolder {
   margin: 5% 0%;
 }
 
+@media (max-width: 768px) {
+  html body .offersList .basicTreatmentsHolder {
+    width: 70%;
+  }
+}
+
+@media (max-width: 576px) {
+  html body .offersList .basicTreatmentsHolder {
+    margin: 10% 0%;
+  }
+}
+
 html body .offersList .basicTreatmentsHolder img {
   max-width: 100%;
 }
@@ -915,6 +1358,12 @@ html body .offersList .printOffers .offerBox {
   cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  html body .offersList .printOffers .offerBox {
+    padding: 4% 0%;
+  }
+}
+
 html body .offersList .printOffers .offerBox span {
   padding-right: 10px;
 }
@@ -929,9 +1378,33 @@ html body .offersList .printOffers > .offerBox:nth-of-type(1) {
 }
 
 html body .offersList .printOffers .offerDesc {
-  font-size: 1.2em;
+  font-size: 1.3em;
   padding: 3%;
   display: none;
+  letter-spacing: 1.1px;
+  line-height: 1.4em;
+}
+
+@media (max-width: 576px) {
+  html body .offersList .printOffers .offerDesc {
+    padding: 5% 3%;
+  }
+}
+
+html body .offersList .printOffers .offerDesc ul {
+  padding-left: 5%;
+}
+
+html body .offersList .printOffers .offerDesc .priceOfferBox {
+  color: #e77080;
+}
+
+html body .offersList .printOffers .offerDesc .moreAboutOffer {
+  color: #ec8f9b;
+}
+
+html body .offersList .printOffers .offerDesc .offerParHeading {
+  color: #ee9ca7;
 }
 
 html .overflowBody {
@@ -984,10 +1457,41 @@ html .navLinkAnimationFirst:hover {
   font-size: 1.5em;
 }
 
+@media (max-width: 576px) {
+  .afterHeadingRejuvena {
+    font-size: 1.3em;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .afterHeadingRejuvena {
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 386px) {
+  .afterHeadingRejuvena {
+    font-size: 1.2em;
+  }
+}
+
 .afterHeadingRejuvena .afterSpanRejuvena {
   font-weight: bold;
   font-size: 1.4em;
   position: relative;
+}
+
+@media (max-width: 480px) {
+  .afterHeadingRejuvena .afterSpanRejuvena {
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 386px) {
+  .afterHeadingRejuvena .afterSpanRejuvena {
+    font-size: 1em;
+  }
 }
 
 .afterHeadingRejuvena .afterSpanRejuvena::before {
@@ -998,6 +1502,12 @@ html .navLinkAnimationFirst:hover {
   background-color: #f6b4bc;
   bottom: -30%;
   left: 35%;
+}
+
+@media (max-width: 480px) {
+  .afterHeadingRejuvena .afterSpanRejuvena::before {
+    bottom: -50%;
+  }
 }
 
 .rejuvenaButton {
@@ -1011,6 +1521,18 @@ html .navLinkAnimationFirst:hover {
   font-size: 1.1em;
 }
 
+@media (max-width: 992px) {
+  .rejuvenaButton {
+    padding: 2.5% 6%;
+  }
+}
+
+@media (max-width: 480px) {
+  .rejuvenaButton {
+    padding: 4% 9%;
+  }
+}
+
 .rejuvenaButton:hover {
   background-color: #f6b4bc;
 }
@@ -1021,8 +1543,8 @@ html .navLinkAnimationFirst:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 1000;
-  background-color: #e58bf5;
+  z-index: 1100;
+  background-color: #f4a2ac;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1032,14 +1554,9 @@ html .navLinkAnimationFirst:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: .7s;
+  transition: .7s;
   opacity: 1;
-}
-
-.spinnerHide {
-  opacity: 0;
-  z-index: -1000;
 }
 
 .main-wand {
@@ -1049,7 +1566,7 @@ html .navLinkAnimationFirst:hover {
 .spinner {
   border: 8px solid #f3f3f3;
   /* Light grey */
-  border-top: 8px solid #ba4cc9;
+  border-top: 8px solid #f07d8b;
   /* Blue */
   border-radius: 50%;
   width: 120px;
@@ -1084,11 +1601,11 @@ html .navLinkAnimationFirst:hover {
 }
 
 .wandfill {
-  fill: #ba4cc9;
+  fill: #f07d8b;
 }
 
 .wand {
-  fill: #ba4cc9;
+  fill: #f07d8b;
 }
 
 /* width */
