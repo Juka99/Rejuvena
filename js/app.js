@@ -2,65 +2,53 @@ const swup = new Swup();
 
 $(document).ready(function() {
 
-    let menuItems = $('.mainNavLink');
+    $("#backToTop").on('click', function() {
 
-    let sideMenuItems = $('.sideNavLink');
+        window.scrollTo(0, 0);
+        
+    })
 
-    for(let el of sideMenuItems) {
+    if(document.querySelector('.codeRejuvenaButton') != null) {
 
-        el.classList.remove('activeLink');
+        loyaltyCodeCheck();
 
-        el.addEventListener('click', changeActiveSide);
+        // Get loyalty code
 
-    }
+        document.querySelector('.codeRejuvenaButton').addEventListener('click', function() {
 
-    function changeActiveSide() {
+            let codeValue = document.getElementById('codeField').value;
 
-        for(let el of sideMenuItems) {
+            if(codeValue == "" || codeValue != "rejuvena2021") {
 
-            if(el.innerHTML != this.innerHTML) {
-
-                el.classList.remove('activeLink');
-
-            }
-
-            else {
-
-                this.classList.add('activeLink');
-
-            }
-
-        }
-
-    };
-
-    for(let el of menuItems) {
-
-        el.classList.remove('activeLink');
-
-        el.addEventListener('click', changeActiveMain);
-
-    }
-
-    function changeActiveMain() {
-
-        for(let el of menuItems) {
-
-            if(el.innerHTML != this.innerHTML) {
-
-                el.classList.remove('activeLink');
+                $("#codeInvalid").show();
 
             }
 
             else {
 
-                this.classList.add('activeLink');
+                $("#codeInvalid").hide();
+
+                if(localStorage) {
+
+                    localStorage.setItem("rejuvenaCode", "approved");
+
+                    loyaltyCodeCheck();
+
+                }
+
+                else {
+
+                    alert("Vaš pretraživač je previše star, molimo vas ažurirajte ga");
+
+                }
 
             }
 
-        }
+        });
 
-    };
+    }
+
+    //////
 
     // Prikaz loadera u zavinsosti od vremena
 
@@ -82,6 +70,48 @@ $(document).ready(function() {
 
     swup.on('contentReplaced', function() {
 
+        // Rejuvena Loyalty CLub
+
+        if(document.querySelector('.codeRejuvenaButton') != null) {
+
+            loyaltyCodeCheck();
+    
+            // Get loyalty code
+    
+            document.querySelector('.codeRejuvenaButton').addEventListener('click', function() {
+    
+                let codeValue = document.getElementById('codeField').value;
+    
+                if(codeValue == "" || codeValue != "rejuvena2021") {
+    
+                    $("#codeInvalid").show();
+    
+                }
+    
+                else {
+    
+                    $("#codeInvalid").hide();
+    
+                    if(localStorage) {
+    
+                        localStorage.setItem("rejuvenaCode", "approved");
+    
+                        loyaltyCodeCheck();
+    
+                    }
+    
+                    else {
+    
+                        alert("Vaš pretraživač je previše star, molimo vas ažurirajte ga");
+    
+                    }
+    
+                }
+    
+            });
+    
+        }
+
         loaderShow();
 
         if(window.location.href.includes('index')) {
@@ -97,6 +127,12 @@ $(document).ready(function() {
         }
 
         window.scrollTo(0, 0);
+
+        $("#backToTop").on('click', function() {
+
+            window.scrollTo(0, 0);
+
+        })
         
         $('.offerBox').on('click', function(){
     
@@ -173,6 +209,18 @@ $(document).ready(function() {
 function scrollEvents() {
 
     let scroll = $(this).scrollTop();
+
+        if(scroll >= 500) {
+
+            $('#backToTop').addClass('backToTopShow');
+
+        }
+
+        else {
+
+            $('#backToTop').removeClass('backToTopShow');
+
+        }
 
         if(scroll >= 150) {
 
@@ -285,6 +333,36 @@ function loaderShow() {
     else {
 
         alert('Local Storage is not supported on your browser !');
+
+    }
+
+}
+
+function loyaltyCodeCheck() {
+
+    if(localStorage) {
+
+        if(localStorage.getItem('rejuvenaCode') && localStorage.getItem('rejuvenaCode') == 'approved') {
+
+            $(".loyaltyOffers").show();
+
+            $(".loyaltyClubInput").hide();
+
+        }
+
+        else {
+
+            $(".loyaltyOffers").hide();
+
+            $(".loyaltyClubInput").show();
+
+        }
+
+    }
+
+    else {
+
+        alert("Vaš pretraživač je previše star, molimo vas ažurirajte ga");
 
     }
 

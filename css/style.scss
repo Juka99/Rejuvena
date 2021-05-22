@@ -14,7 +14,7 @@ $co : column;
 $sb : space-between;
 $fw : wrap;
 
-$d0: 1390px;
+$d0: 1280px;
 $d1 : 1200px;
 $d2: 992px;
 $d3: 768px;
@@ -25,7 +25,7 @@ $d6: 386px;
 // Mixini za resposnive
 
 @mixin d0 {
-    @media (max-width: #{$d0}){
+    @media (min-width: #{$d0}){
         @content;
     }
 }
@@ -132,6 +132,44 @@ html {
         @include regularFont();
         overflow-x: hidden;
 
+        // Back to top
+
+        #backToTop {
+
+            position: fixed;
+            z-index: 999;
+            bottom: 4%;
+            right: 1.5%;
+            transition: .5s;
+            transform: translateY(300px);
+
+            @include d4 {
+
+                display: none;
+
+            }
+
+            &:hover {
+
+                transform: translateY(-7px);
+
+            }
+            
+            i {
+
+                font-size: 1.9em;
+                color : #f6b4bc;
+
+            }
+
+        }
+
+        .backToTopShow {
+
+            transform: translateY(0px) !important;
+
+        }
+
         // Glavna navigacija
 
         .mainNavigation {
@@ -208,11 +246,11 @@ html {
 
                         }
 
-                        .activeLink {
+                        // .activeLink {
 
-                            color : darken(#f6b4bc, 10%) !important;
+                        //     color : darken(#f6b4bc, 10%) !important;
                         
-                        }
+                        // }
 
                     }
 
@@ -286,13 +324,13 @@ html {
 
             &:hover::before{
 
-                background-color: lighten(#ba4cc9, 5%);
+                background-color: darken(#f6b4bc, 15%);
 
             }
 
             &:hover::after{
 
-                background-color: darken(#ba4cc9, 5%);
+                background-color: darken(#f6b4bc, 5%);
 
             }
 
@@ -304,7 +342,7 @@ html {
                 height : 4px;
                 top : 0%;
                 left : 10px;
-                background-color: darken(#ba4cc9, 10%);
+                background-color: darken(#f6b4bc, 10%);
                 transition: .6s;
 
             }
@@ -317,7 +355,7 @@ html {
                 height : 4px;
                 left : 10px;
                 top : 100%;
-                background-color: lighten(#ba4cc9, 10%);
+                background-color: darken(#f6b4bc, 20%);
                 transition: .6s;
 
             }
@@ -379,11 +417,11 @@ html {
                         font-size: 1.5em;
                         letter-spacing: 1.3px;
                         transition: all 0.4s;
-                        color: #551A8B;
+                        color: #f6b4bc;
 
                         &:hover {
 
-                            color :lighten(#ba4cc9, 10%) !important;
+                            color :darken(#f6b4bc, 10%) !important;
                 
                         }
 
@@ -391,7 +429,7 @@ html {
 
                     .activeLink {
 
-                        color : lighten(#ba4cc9, 10%) !important;
+                        color : darken(#f6b4bc, 10%) !important;
                     
                     }
 
@@ -516,6 +554,12 @@ html {
                         right : -20%;
                         bottom : 10%;
 
+                        @include d0 {
+
+                            bottom: 17%;
+
+                        }
+
                         @include d2 {
 
                             bottom : 3%;
@@ -550,6 +594,12 @@ html {
                     font-size: 1.5em;
                     letter-spacing: 2px;
                     padding : 2% 0%;
+
+                    @include d0 {
+
+                        padding-top: 0;
+
+                    }
 
                     @include d3 {
 
@@ -734,10 +784,22 @@ html {
 
                 }
 
+                p {
+                    padding-top: 2%;
+                    font-size: 1.2em;
+                }
+
                 a {
 
                     color : darken(#f6b4bc, 18%);
-                    font-size: 1.1em;
+                    font-size: 1.2em;
+                    text-decoration: none;
+
+                    &:first-of-type {
+
+                        text-decoration: underline;
+
+                    }
 
                     i {
 
@@ -809,46 +871,6 @@ html {
                     @include d5 {
 
                         margin : 10% auto;
-
-                    }
-
-                    .contactField {
-
-                        width : 80%;
-                        margin: 2% 0%;
-                        border : none;
-                        border-bottom: 2px solid #ffb5c1;
-                        outline: none;
-                        padding : 1%;
-                        font-size: 1.2em;
-                        resize: none;
-                        border-radius: 5px;
-                        transition: .4s;
-
-                        @include d2 {
-
-                            margin: 3% 0%;
-        
-                        }
-                        @include d5 {
-
-                            margin: 5% 0%;
-                            width : 90%;
-    
-                        }
-
-                        &:focus {
-
-                            border-color : darken(#f6b4bc, 10%);
-
-                        }
-
-
-                        &::placeholder {
-
-                            @include regularFont();
-
-                        }
 
                     }
 
@@ -958,7 +980,7 @@ html {
 
                                 &:hover {
 
-                                    color : #e279f0;
+                                    color : darken(#f6b4bc, 10%);
 
                                 }
 
@@ -1058,107 +1080,218 @@ html {
 
         .gallery {
 
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: repeat(8, 5vw);
-            grid-gap: 15px;
-            padding : 0% 1.5%;
+            // display: grid;
+            // grid-template-columns: repeat(8, 1fr);
+            // grid-template-rows: repeat(8, 5vw);
+            // grid-gap: 15px;
+            // padding : 0% 1.5%;
 
-            @include d4 {
+            width : 100%;
+            margin : 0 auto;
+            display: $f;
+            flex-direction: $co;
+            justify-content: $c;
+            align-items: $c;
 
-                margin : 2% 0%;
+            .galleryTopPart {
 
-            }
+                width : 100%;
+                display: $f;
+                justify-content: $c;
 
-            &__img {
+                @include d3 {
 
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
+                    flex-direction: $co;
+                    align-items: $c;
 
-            }
+                }
 
-            &__item--1 {
+                .galleryTopPartLeft {
 
-                grid-column-start: 1;
-                grid-column-end: 3;
-                grid-row-start: 1;
-                grid-row-end: 3;
+                    width : 40%;
+                    display: $f;
+                    justify-content: flex-start;
+                    align-items: flex-end;
+                    flex-direction: $co;
+                    margin-right: .5%;
 
-                @include d4 {
+                    @include d3 {
+                        width : 100%;
+                        margin : 0px;
+                        align-items: $c;
+                    }
 
-                    grid-column-start: 1;
-                    grid-column-end: 4;
+                    img {
+
+                        &:first-child {
+                            height: 70%;
+                        }
+
+                        &:last-child {
+                            height: 30%;
+                        }
+
+                        @include d3 {
+                            width : 80%;
+                        }
+
+                    }
+
+                }
+
+                .galleryTopPartRight {
+
+                    display: $f;
+                    justify-content: flex-start;
+                    align-items: flex-start;
+                    flex-direction: $co;
+                    width : 40%;
+
+                    @include d3 {
+                        width : 100%;
+                        align-items: $c;
+                    }
+
+                    img {
+
+                        &:first-child {
+                            height: 40%;
+                        }
+
+                        &:last-child {
+                            height: 60%;
+                        }
+
+                        @include d3 {
+                            width : 80%;
+                        }
+
+                    }
+
+                }
+
+                img {
+
+                    width : 95%;
+                    margin : .5% 0;
 
                 }
 
             }
 
-            &__item--2 {
+            .galleryBottomPart {
 
-                grid-column-start: 3;
-                grid-column-end: 5;
-                grid-row-start: 1;
-                grid-row-end: 3;
+                display: $f;
+                justify-content: $c;
+                width : 76.5%;
+                margin-top: .3%;
 
-                @include d4 {
+                @include d3 {
+                    margin-top: .5%;
+                    width : 80%;
+                }
 
-                    grid-column-start: 4;
-                    grid-column-end: 9;
-
+                img {
+                    width : 100%;
                 }
 
             }
 
-            &__item--3 {
+            // @include d4 {
 
-                grid-column-start: 5;
-                grid-column-end: 9;
-                grid-row-start: 1;
-                grid-row-end: 6;
+            //     margin : 2% 0%;
 
-                @include d4 {
+            // }
 
-                    grid-row-start: 3;
-                    grid-row-end: 5;
+            // &__img {
 
-                }
+            //     width: 100%;
+            //     height: 100%;
+            //     object-fit: cover;
 
-            }
+            // }
 
-            &__item--4 {
+            // &__item--1 {
 
-                grid-column-start: 1;
-                grid-column-end: 5;
-                grid-row-start: 3;
-                grid-row-end: 6;
+            //     grid-column-start: 1;
+            //     grid-column-end: 3;
+            //     grid-row-start: 1;
+            //     grid-row-end: 3;
 
-            }
+            //     @include d4 {
 
-            &__item--5 {
+            //         grid-column-start: 1;
+            //         grid-column-end: 4;
 
-                grid-column-start: 1;
-                grid-column-end: 5;
-                grid-row-start: 6;
-                grid-row-end: 9;
+            //     }
 
-            }
+            // }
 
-            &__item--6 {
+            // &__item--2 {
 
-                grid-column-start: 5;
-                grid-column-end: 9;
-                grid-row-start: 6;
-                grid-row-end: 9;
+            //     grid-column-start: 3;
+            //     grid-column-end: 5;
+            //     grid-row-start: 1;
+            //     grid-row-end: 3;
 
-                @include d4 {
+            //     @include d4 {
 
-                    grid-row-start: 5;
-                    grid-row-end: 9;
+            //         grid-column-start: 4;
+            //         grid-column-end: 9;
 
-                }
+            //     }
 
-            }
+            // }
+
+            // &__item--3 {
+
+            //     grid-column-start: 5;
+            //     grid-column-end: 9;
+            //     grid-row-start: 1;
+            //     grid-row-end: 6;
+
+            //     @include d4 {
+
+            //         grid-row-start: 3;
+            //         grid-row-end: 5;
+
+            //     }
+
+            // }
+
+            // &__item--4 {
+
+            //     grid-column-start: 1;
+            //     grid-column-end: 5;
+            //     grid-row-start: 3;
+            //     grid-row-end: 6;
+
+            // }
+
+            // &__item--5 {
+
+            //     grid-column-start: 1;
+            //     grid-column-end: 5;
+            //     grid-row-start: 6;
+            //     grid-row-end: 9;
+
+            // }
+
+            // &__item--6 {
+
+            //     grid-column-start: 5;
+            //     grid-column-end: 9;
+            //     grid-row-start: 6;
+            //     grid-row-end: 9;
+
+            //     @include d4 {
+
+            //         grid-row-start: 5;
+            //         grid-row-end: 9;
+
+            //     }
+
+            // }
 
         }
 
@@ -1282,9 +1415,9 @@ html {
             justify-content: $c;
             align-items: $c;
             flex-direction: $co;
-            margin : -130px auto 0% auto;
+            margin : -90px auto 0% auto;
 
-            @include d5 {
+            @include d4 {
 
                 margin : -60px auto 0% auto;
 
@@ -1292,10 +1425,10 @@ html {
 
             img {
 
-                width : 70%;
+                width : 60%;
                 margin-bottom: 7%;
 
-                @include d5 {
+                @include d4 {
 
                     margin-bottom: 15%;
                     width : 80%;
@@ -1310,12 +1443,30 @@ html {
 
             }
 
-            p {
+            #aboutText {
 
                 font-size: 1.4em;
                 text-align: $c;
                 line-height: 33px;
                 position: relative;
+
+                p {
+
+                    padding: .3% 0%;
+                    font-size: 1.2em;
+                    line-height: 40px;
+
+                    @include d4 {
+
+                        font-size: 1em;
+                    
+                    }
+
+                }
+
+                a {
+                    color: #ffb5c1;
+                }
 
                 &::before {
 
@@ -1582,6 +1733,54 @@ html {
 
         }
 
+        // Rejuvena Loyalty Club
+
+        .loyaltyOffers {
+
+            display: none;
+
+            .priceBoxes {
+
+                width: 100%;
+
+                .priceBox {
+
+                    width: 100%;
+    
+                }
+
+            }
+
+        }
+
+        .loyaltyClubInput {
+
+            width : 90%;
+            display: $f;
+            flex-direction: $co;
+            align-items: $c;
+            justify-content: $c;
+
+
+            button {
+
+                @include d6 {
+                    margin : 3% 0%;
+                }
+
+            }
+
+            p {
+
+                padding-top: 2%;
+                font-size: 1.5em;
+                text-align: $c;
+                display: none;
+
+            }
+
+        }
+
     }
 
     .overflowBody {
@@ -1637,6 +1836,46 @@ html {
 
 
 // Globalne klase
+
+.contactField {
+
+    width : 80%;
+    margin: 2% 0%;
+    border : none;
+    border-bottom: 2px solid #ffb5c1;
+    outline: none;
+    padding : 1%;
+    font-size: 1.2em;
+    resize: none;
+    border-radius: 5px;
+    transition: .4s;
+
+    @include d2 {
+
+        margin: 3% 0%;
+
+    }
+    @include d5 {
+
+        margin: 5% 0%;
+        width : 90%;
+
+    }
+
+    &:focus {
+
+        border-color : darken(#f6b4bc, 10%);
+
+    }
+
+
+    &::placeholder {
+
+        @include regularFont();
+
+    }
+
+}
 
 .leftSideNavIndex {
 
@@ -1717,11 +1956,13 @@ html {
     text-decoration: none;
     color : whitesmoke;
     background-color: darken(#f6b4bc, 6%);
+    border: none;
     padding : 1.4% 6%;
     font-weight: bold;
     //border-radius: 12px;
     transition: .4s;
     font-size: 1.1em;
+    cursor: pointer;
 
     @include d2 {
 
